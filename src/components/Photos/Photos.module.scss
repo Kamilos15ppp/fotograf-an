@@ -1,0 +1,125 @@
+@import '../../variables';
+@import '../../mixins';
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-primary;
+
+  &__title {
+    margin: 3rem 0;
+    padding: 0 3rem;
+    font-size: 2rem;
+    font-family: $font-family-title;
+
+    @include media('phone') {
+      font-size: 2.4rem;
+    }
+
+    @include media('tablet') {
+      font-size: 3.6rem;
+    }
+
+    @include media('desktop') {
+      margin-top: 8rem;
+      font-size: 4rem;
+    }
+
+    text-align: center;
+    color: $color-section-title;
+  }
+
+  &__image-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    grid-gap: 4rem;
+
+    @include media('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 4rem 0;
+    }
+
+    @include media('desktop') {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    width: 100%;
+  }
+
+  &__image1 {
+    @include media('desktop') {
+      grid-area: 1/1/3/3;
+    }
+  }
+
+  &__image2 {
+    @include media('desktop') {
+      grid-area: 1/3/3/5;
+    }
+  }
+
+  &__image3 {
+    @include media('desktop') {
+      grid-area: 1/5/3/7;
+    }
+  }
+
+  &__image4 {
+    @include media('desktop') {
+      grid-area: 3/1/5/3;
+    }
+  }
+
+  &__image5 {
+    @include media('desktop') {
+      grid-area: 3/3/5/5;
+    }
+  }
+
+  &__image6 {
+    @include media('desktop') {
+      grid-area: 3/5/5/7;
+    }
+  }
+
+  &__image7 {
+    @include media('desktop') {
+      grid-area: 5/2/7/4;
+    }
+  }
+
+  &__image8 {
+    @include media('desktop') {
+      grid-area: 5/4/7/6;
+    }
+  }
+
+  img {
+    place-self: center;
+    width: 90%;
+    border-radius: 10%;
+
+    @include media('desktop') {
+      transition: 0.6s;
+      transform: scale(0.9);
+      filter: grayscale(100%);
+    }
+
+    &:hover {
+      @include media('desktop') {
+        transform: scale(1);
+        filter: grayscale(0);
+      }
+    }
+  }
+}

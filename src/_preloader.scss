@@ -1,0 +1,40 @@
+@import './variables';
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.5s;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.prespinner {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: darken($color-primary, 20%);
+  border-top-color: #4ffe1a;
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

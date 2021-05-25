@@ -1,0 +1,84 @@
+@import '../../mixins';
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('../../images/girlMobile.jpg') fixed no-repeat;
+  background-position: 40% center;
+  background-size: cover;
+  overflow: hidden;
+
+  @include media('phone') {
+    background: url('../../images/girlTablet.jpg') fixed no-repeat center;
+    background-position: 40% center;
+    background-size: cover;
+  }
+
+  @include media('desktop') {
+    background: url('../../images/girl.jpg') fixed no-repeat center;
+    background-position: center 0;
+    background-size: cover;
+  }
+
+  &__dark {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__title {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 3.5rem;
+
+    @include media('phone') {
+      font-size: 4rem;
+    }
+
+    @include media('tablet') {
+      font-size: 5.5rem;
+    }
+
+    @include media('desktop') {
+      font-size: 6rem;
+    }
+
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    opacity: 1;
+    z-index: 3;
+    transition: 0.4s;
+    &--hide {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    width: 30%;
+
+    @include media('phone') {
+      width: 35%;
+    }
+
+    @include media('tablet') {
+      width: 25%;
+    }
+
+    @include media('desktop') {
+      width: 13%;
+      top: 6%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
