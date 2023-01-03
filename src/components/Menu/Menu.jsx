@@ -8,68 +8,65 @@ import { default as MenuStyles } from './Menu.module.scss';
 
 const style = bemCssModules(MenuStyles);
 
-const Menu = () => {
+const menuItems = [
+  {
+    id: 1,
+    to: 'header',
+    text: 'O mnie',
+  },
+  {
+    id: 2,
+    to: 'equipment',
+    text: 'Sprzęt',
+  },
+  {
+    id: 3,
+    to: 'photos',
+    text: 'Zdjęcia',
+  },
+  {
+    id: 4,
+    to: 'offer',
+    text: 'Oferta',
+  },
+  {
+    id: 5,
+    to: 'contact',
+    text: 'Kontakt',
+  },
+];
 
+const Menu = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const handleMenuVisibility = () => {
-    const menuEl = document.querySelector('.menu__options');
+    const menuElements = document.querySelector('.menu__options');
     const isDesktop = window.innerWidth > 1280 ? true : false;
-    const topOffsetMenu = menuEl.offsetTop;
-    isMenuVisible ? setIsMenuVisible(false) : setIsMenuVisible(true);
-    topOffsetMenu >= 0 && !isDesktop ? menuEl.style.top = '-100vh' : menuEl.style.top = '0';
+    const topOffsetMenu = menuElements.offsetTop;
+
+    setIsMenuVisible(prev => !prev);
+
+    topOffsetMenu >= 0 && !isDesktop ? menuElements.style.top = '-100vh' : menuElements.style.top = '0';
   }
+
+  const menu = React.useMemo(() => menuItems.map(({ id, to, text }) => (
+    <li className={style('link')} key={id}>
+      <Link
+        to={to}
+        smooth={true}
+        delay={450}
+        offset={0}
+        onClick={handleMenuVisibility}
+      >
+        {text}
+      </Link>
+    </li>
+  )));
 
   return (
     <nav className={style()}>
       <ul className={style('options')}>
-        <li className={style('link')}>
-          <Link
-            to='header'
-            smooth={true}
-            delay={450}
-            offset={0}
-            onClick={handleMenuVisibility}
-          >
-            O mnie</Link>
-        </li>
-        <li className={style('link')}>
-          <Link
-            to='equipment'
-            smooth={true}
-            delay={450}
-            offset={0}
-            onClick={handleMenuVisibility}
-          >
-            Sprzęt</Link>
-        </li>
-        <li className={style('link')}>
-          <Link
-            to='photos'
-            smooth={true}
-            delay={450}
-            onClick={handleMenuVisibility}
-          >
-            Zdjęcia</Link>
-        </li>
-        <li className={style('link')}>
-          <Link
-            to='offer'
-            smooth={true}
-            delay={450}
-            onClick={handleMenuVisibility}
-          >
-            Oferta</Link>
-        </li>
-        <li className={style('link')}>
-          <Link
-            to='contact'
-            smooth={true}
-            delay={450}
-            onClick={handleMenuVisibility}
-          >
-            Kontakt</Link>
-        </li>
+        {menu}
       </ul>
       <div className={style('icon-wrapper')}>
         <FontAwesomeIcon

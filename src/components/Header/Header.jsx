@@ -16,13 +16,12 @@ const titles = [
 ];
 
 const Header = () => {
-
-  let index = 1;
-
   useEffect(() => {
+    let index = 1;
+
     const titleInterval = setInterval(() => {
       const headerTitle = document.querySelector('.header__title');
-      index > 3 ? index = 0 : index;
+      index > titles.length - 1 ? index = 0 : index;
       let title = titles[index];
 
       headerTitle.classList.add('header__title--hide');

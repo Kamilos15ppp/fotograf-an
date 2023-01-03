@@ -14,21 +14,62 @@ import photo8 from '../../images/photo8.jpg';
 
 const style = bemCssModules(PhotosStyles);
 
+const photosData = [
+  {
+    id: 1,
+    src: photo1,
+    alt: 'photo1',
+  },
+  {
+    id: 2,
+    src: photo2,
+    alt: 'photo2',
+  },
+  {
+    id: 3,
+    src: photo3,
+    alt: 'photo3',
+  },
+  {
+    id: 4,
+    src: photo4,
+    alt: 'photo4',
+  },
+  {
+    id: 5,
+    src: photo5,
+    alt: 'photo5',
+  },
+  {
+    id: 6,
+    src: photo6,
+    alt: 'photo6',
+  },
+  {
+    id: 7,
+    src: photo7,
+    alt: 'photo7',
+  },
+  {
+    id: 8,
+    src: photo8,
+    alt: 'photo8',
+  },
+];
+
+const title = 'Zdjęcia, które wykonałem';
+
 const Photos = () => {
-  const title = 'Zdjęcia, które wykonałem';
+  const photos = React.useMemo(() => photosData.map(({ id, src, alt }) => (
+    <img key={id} src={src} alt={alt} className={style(`image${id}`)} loading='lazy' />
+  )));
+
 
   return (
     <section className={style()}>
       <h1 className={style('title')}>{title.toUpperCase()}</h1>
       <div className={style('image-wrapper')}>
-        <img src={photo1} className={style('image1')} alt='photo1' loading='lazy' />
-        <img src={photo2} className={style('image2')} alt='photo2' loading='lazy' />
-        <img src={photo3} className={style('image3')} alt='photo3' loading='lazy' />
-        <img src={photo4} className={style('image4')} alt='photo4' loading='lazy' />
-        <img src={photo5} className={style('image5')} alt='photo5' loading='lazy' />
-        <img src={photo6} className={style('image6')} alt='photo6' loading='lazy' />
-        <img src={photo7} className={style('image7')} alt='photo7' loading='lazy' />
-        <img src={photo8} className={style('image8')} alt='photo8' loading='lazy' />
+        {photos}
       </div>
     </section>
   );

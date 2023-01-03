@@ -64,62 +64,12 @@
     }
   }
 
-  &__image1 {
+  &__image {
     transition: 0.5s linear;
 
     &:hover {
       @include media('desktop') {
         transform: scale(1.05) translate(-3rem, -3rem);
-      }
-    }
-  }
-
-  &__image2 {
-    transition: 0.5s linear;
-
-    &:hover {
-      @include media('desktop') {
-        transform: scale(1.1);
-      }
-    }
-  }
-
-  &__image3 {
-    transition: 0.5s linear;
-
-    &:hover {
-      @include media('desktop') {
-        transform: scale(1.05) translate(3rem, -3rem);
-      }
-    }
-  }
-
-  &__image4 {
-    transition: 0.5s linear;
-
-    &:hover {
-      @include media('desktop') {
-        transform: scale(1.05) translate(-3rem, 3rem);
-      }
-    }
-  }
-
-  &__image5 {
-    transition: 0.5s linear;
-
-    &:hover {
-      @include media('desktop') {
-        transform: scale(1.1) translateY(-2rem);
-      }
-    }
-  }
-
-  &__image6 {
-    transition: 0.5s linear;
-
-    &:hover {
-      @include media('desktop') {
-        transform: scale(1.05) translate(3rem, 3rem);
       }
     }
   }

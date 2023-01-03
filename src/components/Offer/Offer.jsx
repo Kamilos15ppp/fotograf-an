@@ -8,9 +8,9 @@ import pendrive from '../../images/pendrive.png';
 
 const style = bemCssModules(OfferStyles);
 
-const Offer = () => {
-  const title = 'Co mogę zaoferować?';
+const title = 'Co mogę zaoferować?';
 
+const Offer = () => {
   return (
     <section className={style()}>
       <div className={style('dark')}></div>

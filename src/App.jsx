@@ -12,13 +12,14 @@ import './reset.scss';
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const preTime = setTimeout(() => setIsLoaded(true), 1500);
+  const preloaderVisibility = `preloader ${isLoaded ? '' : 'visible'}`;
 
   useEffect(() => {
+    const preTime = setTimeout(() => setIsLoaded(true), 1500);
+
     return () => clearTimeout(preTime);
   }, []);
 
-  const preloaderVisibility = `preloader ${isLoaded ? '' : 'visible'}`;
 
   return (
     <>

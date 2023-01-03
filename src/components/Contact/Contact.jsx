@@ -5,9 +5,9 @@ import { default as ContactStyles } from './Contact.module.scss';
 
 const style = bemCssModules(ContactStyles);
 
-const Contact = () => {
-  const title = 'Skontaktuj się ze mną';
+const title = 'Skontaktuj się ze mną';
 
+const Contact = () => {
   return (
     <section className={style()}>
       <h1 className={style('title')}>{title.toUpperCase()}</h1>
