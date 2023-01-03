@@ -6,7 +6,8 @@ It has been created with webpack.\
 I used technologies such as HTML, CSS BEM [SCSS] and JS.
 
 ## See the page
-You can see the website [here](https://fotograf-an.netlify.app/).
+
+You can see the website [here](https://an-fotograf.you2.pl/).
 
 ## How to run app?
 
