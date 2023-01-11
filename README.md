@@ -1,22 +1,27 @@
-# Fotograf Adam Nowak
+# fotograf-an
 
-This is my second project in React JS.\
-Project is landing page for photographer.\
-It has been created with webpack.\
-I used technologies such as HTML, CSS BEM [SCSS] and JS.
+Photographer website with a few sections. Built with custom webpack config.
 
-## See the page
+## Live version
 
-You can see the website [here](https://an-fotograf.you2.pl/).
+[https://an-fotograf.you2.pl/](https://an-fotograf.you2.pl/)
 
-## How to run app?
+## Built with
 
-Install all the dependencies:
+* [ReactJS](https://reactjs.org/)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript)
+* [Sass](https://sass-lang.com/)
+* [bem-css-modules](https://www.npmjs.com/package/bem-css-modules)
+* [react-scroll](https://www.npmjs.com/package/react-scroll)
+* [Font awesome](https://fontawesome.com/)
+* [Webpack](https://webpack.js.org/)
 
-#### `npm install`
+## Run project
 
-Then run the project:
+Run: `npm install` & `npm start`
 
-#### `npm run start`
+Open: [http://localhost:3000](http://localhost:3000)
 
-Open [http://localhost:3000](http://localhost:3000) to view it.
+## Author
+
+Kamil Sarga - [Kamilos15ppp](https://github.com/Kamilos15ppp)
